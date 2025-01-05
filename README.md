@@ -139,6 +139,8 @@ python train_nf.py --data_dir DATA_DIR \
                    --batch_size 1024 \
                    --warmup 100 \
                    --seed 42
+
+clear && CUDA_VISIBLE_DEVICES=2 python train_nf.py --data_dir .../experiments/BISCUIT/data/ithor/ --autoencoder_checkpoint .../experiments/BISCUIT/experiments/checkpoints/Autoencoder/AE_40l_64hid/version_0/checkpoints/epoch=0-step=31.ckpt --num_latents 40 --c_hid 64 --num_flows 6 --lr 1e-3 --prior_action_add_prev_state --num_samples 2 --batch_size 16 --warmup 100 --max_epochs 1 --check_val_every_n_epoch 1 --cluster --seed 42
 ```
 For iTHOR, the same command can be used, up to the `--num_latents` argument, which should be set to 40.
 
